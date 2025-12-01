@@ -160,7 +160,7 @@ export default function CryptoQuantApp() {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 2000); // 2秒超时快速回退
 
-      const res = await fetch("http://localhost:3001/api/analyze", {
+      const res = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ symbol: selectedCoin, strategy: config }),
